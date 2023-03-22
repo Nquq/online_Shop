@@ -1,0 +1,164 @@
+@import '../../style/variables';
+.header {
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+	width: 1370px;
+	margin: auto;
+}
+
+.firstRow {
+	padding: 14px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.location {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.section {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.line {
+	height: 40px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}
+
+.address {
+	width: 240px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.address > span {
+	font-weight: 400;
+}
+
+.secondSection {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+
+.primaryLine {
+	background: #3f4e65;
+	opacity: 0.2;
+	height: 1px;
+}
+
+.secondRow {
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	margin-right: 18px;
+}
+
+.logoTitle {
+	color: $color2;
+	font-size: 30px;
+	font-weight: 900;
+	letter-spacing: 3.5px;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background-color: $color6;
+	color: white;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	border: none;
+	outline: none;
+	padding: 21px 54px;
+	border-radius: 80px;
+}
+
+.searchInput {
+	width: 230px;
+	height: 60px;
+	padding: 0;
+	background: #ededed;
+	border-radius: 36px;
+	border: none;
+	outline: none;
+	position: relative;
+	padding-left: 20px;
+}
+
+.search {
+	width: 260px;
+	margin: 0 0 0 15px;
+	position: relative;
+}
+
+.searchLogo {
+	padding: 10px;
+	background-color: $color6;
+	border-radius: 9999px;
+	position: absolute;
+	right: 20px;
+	top: 12px;
+}
+
+.helperLogo {
+	position: relative;
+}
+
+.helperLogo > img {
+	border-radius: 40px;
+}
+
+.online {
+	width: 8px;
+	height: 8px;
+	border-radius: 1000px;
+	background: #1fd85d;
+	border: 2px solid #f0f6fa;
+	position: absolute;
+	top: 25px;
+	right: 5px;
+}
+
+.cart {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+}
+
+.cartTitles {
+	width: 60px;
+}
+
+.cartName {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 150%;
+	color: $color2;
+}
+
+.cartPrice {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 150%;
+
+	color: $color1;
+}

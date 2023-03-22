@@ -1,0 +1,17 @@
+@import '../../style/variables';
+.email {
+	width: 170px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.email > div {
+	font-weight: 400;
+	font-size: 14px;
+}
+.section {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}

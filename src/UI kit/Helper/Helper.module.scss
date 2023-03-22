@@ -1,0 +1,36 @@
+@import '../../style/variables';
+
+.helper {
+	display: flex;
+	align-items: center;
+	text-align: right;
+	gap: 10px;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.number {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 150%;
+	color: $color1;
+}
+
+.clock {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 150%;
+	color: $color2;
+}
+
+.phone {
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 150%;
+	text-decoration-line: underline;
+	color: $color2;
+}
