@@ -1,14 +1,16 @@
 import style from './Email.module.scss';
 
 type EmailProps = {
-	emailLogo: string | null;
+	emailLogo?: string | null;
+	isWhite: boolean;
 };
 
-const Email = ({ emailLogo }: EmailProps) => {
+const Email = ({ emailLogo, isWhite }: EmailProps) => {
+	const whiteClass = isWhite ? style.whiteEmail : style.email;
 	return (
 		<div className={style.section}>
-			{emailLogo && <img src={emailLogo} width='16px' height='13px' />}
-			<div className={style.email}>
+			{emailLogo && <img src='/src/UI kit/images/email-logo.png' width='16px' height='13px' />}
+			<div className={whiteClass}>
 				opt.sultan@mail.ru <div>На связи в любое время</div>
 			</div>
 		</div>

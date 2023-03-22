@@ -1,13 +1,13 @@
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import DesktopFooter from './components/DesktopFooter/DesktopFooter';
+import DesktopHeader from './components/DesktopHeader/DesktopHeader';
 import Main from './components/Main/Main';
 
 function App() {
 	return (
 		<div className='App'>
-			<Header />
+			<DesktopHeader />
 			<Main />
-			<Footer />
+			<DesktopFooter />
 		</div>
 	);
 }

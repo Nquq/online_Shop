@@ -1,14 +1,9 @@
 import Email from '../../UI kit/Email/Email';
 import Helper from '../../UI kit/Helper/Helper';
-import locationLogo from '../../UI kit/images/akar-icons_location.png';
-import cart from '../../UI kit/images/cart.png';
-import catalogLogo from '../../UI kit/images/catalog-logo.png';
-import download from '../../UI kit/images/dowload-logo.png';
 import emailLogo from '../../UI kit/images/email-logo.png';
-import helper from '../../UI kit/images/helper.png';
-import primaryLogo from '../../UI kit/images/primary-logo.png';
-import searchLogo from '../../UI kit/images/search-logo.png';
-import style from './Header.module.scss';
+import Logo from '../../UI kit/Logo/Logo';
+import PriceListButton from '../../UI kit/PriceListButton/PriceListButton';
+import style from './DesktopHeader.module.scss';
 
 type Props = {};
 
@@ -19,13 +14,13 @@ const Header = (props: Props) => {
 				<div className={style.firstRow}>
 					<div className={style.location}>
 						<div className={style.section}>
-							<img src={locationLogo} alt='' />
+							<img src='/src/UI kit/images/akar-icons_location.png' alt='' />
 							<div className={style.address}>
 								г. Кокчетав, ул. Ж. Ташенова 129Б <span>(Рынок Восточный)</span>
 							</div>
 						</div>
 						<div className={style.line}></div>
-						<Email emailLogo={emailLogo} />
+						<Email emailLogo={emailLogo} isWhite={false} />
 					</div>
 					<div className={style.secondSection}>
 						<div>О компании</div>
@@ -41,32 +36,26 @@ const Header = (props: Props) => {
 			<div className={style.primaryLine}></div>
 			<div className={style.container}>
 				<div className={style.secondRow}>
-					<div className={style.logo}>
-						<img src={primaryLogo} />
-						<div className={style.logoTitle}>СУЛТАН</div>
-					</div>
+					<Logo isWhite={false} />
 					<button className={style.button}>
 						<div>Каталог</div>
-						<img src={catalogLogo} alt='' />
+						<img src='/src/UI kit/images/catalog-logo.png' alt='' />
 					</button>
 					<div className={style.search}>
 						<input type='text' placeholder='Поиск...' className={style.searchInput} />
-						<img src={searchLogo} alt='' className={style.searchLogo} />
+						<img src='/src/UI kit/images/search-logo.png' alt='' className={style.searchLogo} />
 					</div>
-					<Helper />
+					<Helper isWhite={false} />
 					<div className={style.helperLogo}>
-						<img src={helper} alt='' />
+						<img src='/src/UI kit/images/helper.png' alt='' />
 						<div className={style.online}></div>
 					</div>
 					<div className={style.line} style={{ margin: '0 25px 0 25px' }}></div>
-					<button className={style.button}>
-						<div>Каталог</div>
-						<img src={download} alt='' />
-					</button>
+					<PriceListButton />
 					<div className={style.line} style={{ margin: '0 25px 0 25px' }}></div>
 					<div className={style.cart}>
 						<div>
-							<img src={cart} alt='' />
+							<img src='/src/UI kit/images/cart.png' alt='' />
 						</div>
 						<div className={style.cartTitles}>
 							<div className={style.cartName}>Корзина</div>

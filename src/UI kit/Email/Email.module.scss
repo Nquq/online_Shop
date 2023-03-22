@@ -4,14 +4,27 @@
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
+	& > div {
+		font-weight: 400;
+		font-size: 14px;
+	}
 }
 
-.email > div {
-	font-weight: 400;
-	font-size: 14px;
-}
 .section {
 	display: flex;
 	align-items: center;
 	gap: 18px;
+}
+
+.whiteEmail {
+	width: 170px;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	color: white;
+	& > div {
+		font-weight: 400;
+		font-size: 14px;
+		color: white;
+	}
 }
