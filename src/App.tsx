@@ -12,7 +12,7 @@ function App() {
 		if (window.innerWidth <= 768) {
 			setIsMobile(true);
 		}
-	}, [window.innerWidth]);
+	}, []);
 
 	return (
 		<div className='App'>
