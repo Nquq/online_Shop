@@ -14,3 +14,18 @@
 	padding: 21px 54px;
 	border-radius: 80px;
 }
+
+.mobileButton {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: $color6;
+	color: white;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 17px;
+	border: none;
+	outline: none;
+	padding: 12px 25px;
+	border-radius: 80px;
+}

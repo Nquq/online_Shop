@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import style from './Email.module.scss';
 
 type EmailProps = {
@@ -5,7 +6,7 @@ type EmailProps = {
 	isWhite: boolean;
 };
 
-const Email = ({ emailLogo, isWhite }: EmailProps) => {
+const Email: FC<EmailProps> = ({ emailLogo, isWhite }) => {
 	const whiteClass = isWhite ? style.whiteEmail : style.email;
 	return (
 		<div className={style.section}>

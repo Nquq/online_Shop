@@ -1,9 +1,13 @@
+import { FC } from 'react';
 import style from './PriceListButton.module.scss';
-type Props = {};
+type PriceListButtonProps = {
+	isMobile?: boolean;
+};
 
-const PriceListButton = (props: Props) => {
+const PriceListButton: FC<PriceListButtonProps> = ({ isMobile }) => {
+	const mobileView = isMobile ? style.mobileButton : style.button;
 	return (
-		<button className={style.button}>
+		<button className={mobileView}>
 			<div>Прайс-лист</div>
 			<img src='/src/UI kit/images/dowload-logo.png' alt='' />
 		</button>

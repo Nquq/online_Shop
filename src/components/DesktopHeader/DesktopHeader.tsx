@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Email from '../../UI kit/Email/Email';
 import Helper from '../../UI kit/Helper/Helper';
 import emailLogo from '../../UI kit/images/email-logo.png';
@@ -7,7 +8,7 @@ import style from './DesktopHeader.module.scss';
 
 type Props = {};
 
-const Header = (props: Props) => {
+const Header: FC = (props: Props) => {
 	return (
 		<header className={style.header}>
 			<div className={style.container}>

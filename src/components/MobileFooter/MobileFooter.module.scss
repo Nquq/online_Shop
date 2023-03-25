@@ -1,0 +1,121 @@
+@import '../../style/variables';
+
+.footer {
+	background: $color2;
+	font-family: 'Inter', sans-serif;
+	padding: 15px 0;
+}
+
+.container {
+	max-width: 290px;
+	margin: auto;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.firstRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.about {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+}
+
+.subtitle {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+}
+
+.searchInput {
+	width: 100%;
+	height: 60px;
+	padding: 0;
+	background: #ededed;
+	border-radius: 36px;
+	border: none;
+	outline: none;
+	position: relative;
+	padding-left: 20px;
+}
+
+.search {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+}
+
+.searchLogo {
+	width: 40px;
+	height: 40px;
+	background-color: $color6;
+	border-radius: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.searchLogo > img {
+	position: absolute;
+	top: 12px;
+	left: 17px;
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.secondRow {
+	display: flex;
+	justify-content: space-between;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 150%;
+	color: #ffffff;
+}
+
+.icons {
+	display: flex;
+	gap: 10px;
+}
+
+.thirdRow {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.messengers {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+	color: #ffffff;
+}

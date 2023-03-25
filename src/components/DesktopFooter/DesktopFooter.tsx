@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Email from '../../UI kit/Email/Email';
 import Helper from '../../UI kit/Helper/Helper';
 import Logo from '../../UI kit/Logo/Logo';
@@ -6,7 +7,7 @@ import style from './DesktopFooter.module.scss';
 
 type Props = {};
 
-const Footer = (props: Props) => {
+const Footer: FC = (props: Props) => {
 	return (
 		<footer className={style.footer}>
 			<div className={style.container}>

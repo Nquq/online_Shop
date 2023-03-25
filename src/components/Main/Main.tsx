@@ -1,6 +1,8 @@
+import { FC } from 'react';
+
 type Props = {};
 
-const Main = (props: Props) => {
+const Main: FC = (props: Props) => {
 	return (
 		<div>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti repudiandae sint blanditiis perspiciatis corporis tempora voluptates

@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import style from './Helper.module.scss';
 
-type HelperProps = {
+interface HelperProps {
 	isWhite: boolean;
-};
+}
 
-const Helper = ({ isWhite }: HelperProps) => {
+const Helper: FC<HelperProps> = ({ isWhite }) => {
 	const whiteClass = isWhite ? style.contactsWhite : style.contacts;
 	return (
 		<div className={style.helper}>
