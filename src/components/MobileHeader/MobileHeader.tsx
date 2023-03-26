@@ -7,7 +7,7 @@ import style from './MobileHeader.module.scss';
 type Props = {};
 
 const MobileHeader: FC = (props: Props) => {
-	function handleBurgerClick() {
+	function handleBurgerClick(): void {
 		const burger: HTMLElement = document.querySelector(`.${style.burger}`)!;
 		const menu: HTMLElement = document.querySelector(`.${style.hiddenBurgerMenu}`)!;
 		const background: HTMLElement = document.querySelector(`.${style.grayBackground}`)!;

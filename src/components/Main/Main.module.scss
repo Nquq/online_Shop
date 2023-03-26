@@ -1,0 +1,111 @@
+@import '../../style/variables';
+
+.main {
+	font-family: 'Inter', sans-serif;
+	padding: 45px 0;
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	position: relative;
+}
+
+.line {
+	height: 16px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}
+
+.breadCrumbs {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	height: 17px;
+}
+
+.main {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 17px;
+	color: $color2;
+}
+
+.category {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 120%;
+	color: $color2;
+	opacity: 0.5;
+}
+
+.header {
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 48px;
+	text-transform: uppercase;
+	color: $color1;
+	padding: 50px 0 25px 0;
+}
+
+.sortTitle {
+	position: absolute;
+	right: 0;
+	top: 100px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: $color1;
+}
+
+.sort {
+	margin-left: 10px;
+	outline: none;
+	border: none;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	color: $color2;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	padding: 10px;
+	gap: 10px;
+}
+
+.sortCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: $color2;
+	box-shadow: 0px 15px 70px -11px rgba(0, 0, 0, 0.06);
+	border-radius: 10px;
+	width: 100px;
+	height: 70px;
+	cursor: pointer;
+}
+
+.grid {
+	display: grid;
+	grid-template: 1fr / 300px 1fr;
+}
+
+.cards {
+	display: grid;
+	grid-template: 12fr / repeat(3, 326px);
+	gap: 21px;
+	justify-content: center;
+}
+
+.sidebar {
+	width: 376px;
+}
