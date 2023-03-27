@@ -1,0 +1,27 @@
+@import '../../style/variables';
+
+.searchInput {
+	width: 220px;
+	height: 60px;
+	padding: 0;
+	background: #ededed;
+	border-radius: 36px;
+	border: none;
+	outline: none;
+	position: relative;
+	padding-left: 20px;
+}
+
+.search {
+	width: 260px;
+	position: relative;
+}
+
+.searchLogo {
+	padding: 10px;
+	background-color: $color6;
+	border-radius: 9999px;
+	position: absolute;
+	right: 30px;
+	top: 12px;
+}

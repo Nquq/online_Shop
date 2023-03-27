@@ -4,6 +4,7 @@ import Helper from '../../UI kit/Helper/Helper';
 import emailLogo from '../../UI kit/images/email-logo.png';
 import Logo from '../../UI kit/Logo/Logo';
 import PriceListButton from '../../UI kit/PriceListButton/PriceListButton';
+import Search from '../../UI kit/Search/Search';
 import style from './DesktopHeader.module.scss';
 
 type Props = {};
@@ -42,10 +43,7 @@ const Header: FC = (props: Props) => {
 						<div>Каталог</div>
 						<img src='/src/UI kit/images/catalog-logo.png' alt='' />
 					</button>
-					<div className={style.search}>
-						<input type='text' placeholder='Поиск...' className={style.searchInput} />
-						<img src='/src/UI kit/images/search-logo.png' alt='' className={style.searchLogo} />
-					</div>
+					<Search />
 					<Helper isWhite={false} />
 					<div className={style.helperLogo}>
 						<img src='/src/UI kit/images/helper.png' alt='' />

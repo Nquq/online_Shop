@@ -1,0 +1,107 @@
+@import '../../style/variables';
+
+.sidebar {
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+	max-width: 240px;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: $color1;
+}
+
+.price {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	& > div > span {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 150%;
+		color: $color1;
+	}
+}
+
+.row {
+	width: 240px;
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	& > input {
+		background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+		border-radius: 1000px;
+		outline: none;
+		border: none;
+		width: 100px;
+		gap: 10px;
+		height: 23px;
+		text-align: center;
+	}
+}
+
+.line {
+	width: 100%;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+	margin-bottom: 20px;
+}
+
+.producer {
+	margin: 15px 0;
+}
+
+.sortCard {
+	margin-bottom: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	text-transform: uppercase;
+	color: $color1;
+	cursor: pointer;
+}
+
+.buttons {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.show {
+	width: 170px;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: $color5;
+	border-radius: 79px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	color: #ffffff;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.trash {
+	width: 59px;
+	height: 59px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 19px;
+	background: $color5;
+	border-radius: 79px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}

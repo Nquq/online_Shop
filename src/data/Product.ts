@@ -1,6 +1,6 @@
-import { ProductItemType } from './../types/ProductType';
+import { IProductItemType } from './../types/ProductType';
 
-const aos_1: ProductItemType = {
+const aos_1: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -12,7 +12,7 @@ const aos_1: ProductItemType = {
 	price: 48.76,
 	careTypes: ['hand', 'face'],
 };
-const aos_2: ProductItemType = {
+const aos_2: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -21,10 +21,10 @@ const aos_2: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
-	price: 48.76,
+	price: 49.76,
 	careTypes: ['hand', 'face'],
 };
-const aos_3: ProductItemType = {
+const aos_3: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -33,10 +33,10 @@ const aos_3: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
-	price: 48.76,
+	price: 46.76,
 	careTypes: ['hand', 'face'],
 };
-const aos_4: ProductItemType = {
+const aos_4: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -45,10 +45,10 @@ const aos_4: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
-	price: 48.76,
+	price: 48.06,
 	careTypes: ['hand', 'face'],
 };
-const aos_5: ProductItemType = {
+const aos_5: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -57,10 +57,10 @@ const aos_5: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
-	price: 48.76,
+	price: 58.76,
 	careTypes: ['hand', 'face'],
 };
-const aos_6: ProductItemType = {
+const aos_6: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
@@ -69,89 +69,89 @@ const aos_6: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
-	price: 48.76,
+	price: 42.76,
 	careTypes: ['hand', 'face'],
 };
 
-const ariel_1: ProductItemType = {
+const ariel_1: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097546,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 44.76,
 	careTypes: ['body', 'face'],
 };
 
-const ariel_2: ProductItemType = {
+const ariel_2: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097547,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 48.16,
 	careTypes: ['body', 'face'],
 };
 
-const ariel_3: ProductItemType = {
+const ariel_3: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097548,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 68.76,
 	careTypes: ['body', 'face'],
 };
 
-const ariel_4: ProductItemType = {
+const ariel_4: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097549,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 128.76,
 	careTypes: ['body', 'face'],
 };
 
-const ariel_5: ProductItemType = {
+const ariel_5: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097550,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 448.76,
 	careTypes: ['body', 'face'],
 };
 
-const ariel_6: ProductItemType = {
+const ariel_6: IProductItemType = {
 	url: '/src/UI kit/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
 	code: 4604049097551,
-	producer: 'Нэфис',
+	producer: 'Procter&Gamble',
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-	price: 48.76,
+	price: 489.76,
 	careTypes: ['body', 'face'],
 };
 
-const bimax_1: ProductItemType = {
+const bimax_1: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -160,11 +160,11 @@ const bimax_1: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 28.76,
 	careTypes: ['body', 'hand'],
 };
 
-const bimax_2: ProductItemType = {
+const bimax_2: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -173,11 +173,11 @@ const bimax_2: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 48.96,
 	careTypes: ['body', 'hand'],
 };
 
-const bimax_3: ProductItemType = {
+const bimax_3: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -186,11 +186,11 @@ const bimax_3: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 45.76,
 	careTypes: ['body', 'hand'],
 };
 
-const bimax_4: ProductItemType = {
+const bimax_4: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -199,11 +199,11 @@ const bimax_4: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 42.76,
 	careTypes: ['body', 'hand'],
 };
 
-const bimax_5: ProductItemType = {
+const bimax_5: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -212,11 +212,11 @@ const bimax_5: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 38.76,
 	careTypes: ['body', 'hand'],
 };
 
-const bimax_6: ProductItemType = {
+const bimax_6: IProductItemType = {
 	url: '/src/UI kit/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
@@ -225,11 +225,11 @@ const bimax_6: ProductItemType = {
 	producer: 'Нэфис',
 	brand: 'BIMAX',
 	description: 'Порошок стиральный Автомат 100 пятен COMPACT',
-	price: 48.76,
+	price: 48.79,
 	careTypes: ['body', 'hand'],
 };
 
-export const Products: ProductItemType[] = [
+export const Products: IProductItemType[] = [
 	aos_1,
 	ariel_1,
 	bimax_1,
@@ -248,6 +248,6 @@ export const Products: ProductItemType[] = [
 	aos_6,
 	ariel_6,
 	bimax_6,
-];
+]; // ].sort((a, b) => (a.title > b.title ? 1 : -1));
 
-// .sort((a, b) => (a.title < b.title ? -1 : 1))
+// )

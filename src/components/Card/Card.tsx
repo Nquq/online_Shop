@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { ProductItemType } from '../../types/ProductType';
+import { IProductItemType } from '../../types/ProductType';
 import style from './Card.module.scss';
 type CardProps = {
-	product: ProductItemType;
+	product: IProductItemType;
 };
 
 const Card: FC<CardProps> = ({ product }) => {
@@ -38,7 +38,7 @@ const Card: FC<CardProps> = ({ product }) => {
 					<div className={style.cartArea}>
 						<div className={style.price}>{product.price} ₸</div>
 						<button className={style.cart}>
-							Корзина
+							В КОРЗИНУ
 							<img src='/src/UI kit/images/white-cart.png' alt='' />
 						</button>
 					</div>

@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { Products } from '../../data/Product';
-import { ProductItemType } from '../../types/ProductType';
+import { IProductItemType } from '../../types/ProductType';
 import Card from '../Card/Card';
 type Props = {};
 
 const ListCard: FC = (props: Props) => {
 	return (
 		<>
-			{Products.map((product: ProductItemType) => {
+			{Products.map((product: IProductItemType) => {
 				return <Card key={product.code} product={product} />;
 			})}
 		</>

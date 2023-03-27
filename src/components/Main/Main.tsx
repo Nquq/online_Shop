@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import ListCard from '../ListCard/ListCard';
+import SideBar from '../SideBar/SideBar';
 import style from './Main.module.scss';
 
 type Props = {};
@@ -32,7 +33,9 @@ const Main: FC = (props: Props) => {
 					</div>
 				</div>
 				<div className={style.grid}>
-					<aside className={style.sidebar}>sidebar</aside>
+					<aside className={style.sidebar}>
+						<SideBar />
+					</aside>
 					<main className={style.cards}>
 						<ListCard />
 					</main>

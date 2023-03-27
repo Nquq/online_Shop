@@ -1,4 +1,4 @@
-export interface ProductItemType {
+export interface IProductItemType {
 	url: string;
 	title: string;
 	typeSize: string;
