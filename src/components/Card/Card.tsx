@@ -13,7 +13,7 @@ const Card: FC<CardProps> = ({ product }) => {
 			<div className={style.container}>
 				<div className={style.primaryColumn}>
 					<div className={style.img}>
-						<img src={product.url} alt='' />
+						<img src={product.url} alt='' height='200px' />
 					</div>
 					<div className={style.cardInfo}>
 						<div className={style.size}>
@@ -34,13 +34,13 @@ const Card: FC<CardProps> = ({ product }) => {
 								Бренд: <span className={style.primary}>{product.brand}</span>
 							</div>
 						</div>
-						<div className={style.cartArea}>
-							<div className={style.price}>{product.price} ₸</div>
-							<button className={style.cart}>
-								Корзина
-								<img src='/src/UI kit/images/white-cart.png' alt='' />
-							</button>
-						</div>
+					</div>
+					<div className={style.cartArea}>
+						<div className={style.price}>{product.price} ₸</div>
+						<button className={style.cart}>
+							Корзина
+							<img src='/src/UI kit/images/white-cart.png' alt='' />
+						</button>
 					</div>
 				</div>
 			</div>

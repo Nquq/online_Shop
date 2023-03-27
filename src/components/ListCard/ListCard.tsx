@@ -8,7 +8,7 @@ const ListCard: FC = (props: Props) => {
 	return (
 		<>
 			{Products.map((product: ProductItemType) => {
-				return <Card product={product} />;
+				return <Card key={product.code} product={product} />;
 			})}
 		</>
 	);
