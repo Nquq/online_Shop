@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { useAction } from '../../hooks/useAction';
+import { useTypedSelector } from '../../hooks/useTappedSelector';
 import { IProductItemType } from '../../types/ProductType';
 import style from './Card.module.scss';
 type CardProps = {
@@ -7,6 +9,10 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ product }) => {
 	const sizeType = product.typeSize === 'volume' ? '/src/UI kit/images/volume.png' : '/src/UI kit/images/weight.png';
+
+	const { addItem } = useAction();
+	const { cart } = useTypedSelector(state => state);
+	const isExistsInCart = cart.some(p => p.code === product.code);
 
 	return (
 		<div className={style.card}>
@@ -37,9 +43,15 @@ const Card: FC<CardProps> = ({ product }) => {
 					</div>
 					<div className={style.cartArea}>
 						<div className={style.price}>{product.price} ₸</div>
-						<button className={style.cart}>
-							В КОРЗИНУ
-							<img src='/src/UI kit/images/white-cart.png' alt='' />
+						<button className={style.cart} onClick={() => !isExistsInCart && addItem(product)}>
+							{isExistsInCart ? (
+								'УЖЕ В КОРЗИНЕ'
+							) : (
+								<>
+									В КОРЗИНУ
+									<img src='/src/UI kit/images/white-cart.png' alt='' />
+								</>
+							)}
 						</button>
 					</div>
 				</div>

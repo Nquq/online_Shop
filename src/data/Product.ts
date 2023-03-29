@@ -248,6 +248,4 @@ export const Products: IProductItemType[] = [
 	aos_6,
 	ariel_6,
 	bimax_6,
-]; // ].sort((a, b) => (a.title > b.title ? 1 : -1));
-
-// )
+].sort((a, b) => (a.title > b.title ? 1 : -1));

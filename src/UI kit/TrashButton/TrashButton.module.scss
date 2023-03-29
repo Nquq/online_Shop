@@ -1,0 +1,16 @@
+@import '../../style/variables';
+
+.trash {
+	width: 59px;
+	height: 59px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 19px;
+	background: $color5;
+	border-radius: 79px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import style from './Search.module.scss';
-type Props = {};
+type SearchProps = {};
 
-const Search: FC = (props: Props) => {
+const Search: FC<SearchProps> = () => {
 	return (
 		<div className={style.search}>
 			<input type='text' placeholder='Поиск...' className={style.searchInput} />

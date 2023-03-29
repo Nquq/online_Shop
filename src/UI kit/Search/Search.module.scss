@@ -10,11 +10,17 @@
 	outline: none;
 	position: relative;
 	padding-left: 20px;
+	@media (max-width: 400px) {
+		width: 270px;
+	}
 }
 
 .search {
 	width: 260px;
 	position: relative;
+	@media (max-width: 400px) {
+		width: 290px;
+	}
 }
 
 .searchLogo {
@@ -24,4 +30,7 @@
 	position: absolute;
 	right: 30px;
 	top: 12px;
+	@media (max-width: 400px) {
+		right: 10px;
+	}
 }

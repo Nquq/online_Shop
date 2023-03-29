@@ -6,7 +6,7 @@ import MobileFooter from './components/MobileFooter/MobileFooter';
 import MobileHeader from './components/MobileHeader/MobileHeader';
 
 function App() {
-	const [isMobile, setIsMobile] = useState(false);
+	const [isMobile, setIsMobile] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (window.innerWidth <= 768) {

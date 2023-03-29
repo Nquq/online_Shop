@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTypedSelector } from '../../hooks/useTappedSelector';
 import Email from '../../UI kit/Email/Email';
 import Helper from '../../UI kit/Helper/Helper';
 import emailLogo from '../../UI kit/images/email-logo.png';
@@ -10,6 +11,8 @@ import style from './DesktopHeader.module.scss';
 type Props = {};
 
 const Header: FC = (props: Props) => {
+	const { cart } = useTypedSelector(state => state);
+	console.log(cart);
 	return (
 		<header className={style.header}>
 			<div className={style.container}>
@@ -58,7 +61,16 @@ const Header: FC = (props: Props) => {
 						</div>
 						<div className={style.cartTitles}>
 							<div className={style.cartName}>Корзина</div>
-							<div className={style.cartPrice}>0 ₸</div>
+							<div className={style.cartPrice}>
+								<>
+									{cart
+										.reduce((prev, current) => {
+											return prev + current.price;
+										}, 0)
+										.toFixed(2)}{' '}
+									₸
+								</>
+							</div>
 						</div>
 					</div>
 				</div>

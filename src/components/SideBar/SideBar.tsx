@@ -1,14 +1,30 @@
 import { FC } from 'react';
+import { Products } from '../../data/Product';
+import { IProductItemType } from '../../types/ProductType';
 import ListCheckBox from '../../UI kit/ListCheckBox/ListCheckBox';
 import Search from '../../UI kit/Search/Search';
+import TrashButton from '../../UI kit/TrashButton/TrashButton';
 import style from './SideBar.module.scss';
-type SideBarProps = {};
 
-const SideBar: FC<SideBarProps> = () => {
+type SideBarProps = {
+	isMobile: boolean;
+};
+
+const SideBar: FC<SideBarProps> = ({ isMobile }) => {
+	const mobileContainer = isMobile ? style.mobileContainer : style.container;
+	const maxPrice = (products: IProductItemType[]) => {
+		let max: number = 0;
+		products.map(product => {
+			product.price > max ? (max = product.price) : null;
+		});
+
+		return `${max}`;
+	};
+
 	return (
 		<div className={style.sidebar}>
-			<div className={style.container}>
-				<div className={style.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>
+			<div className={mobileContainer}>
+				{isMobile ? null : <div className={style.title}>ПОДБОР ПО ПАРАМЕТРАМ</div>}
 				<section className={style.price}>
 					<div>
 						Цена <span>₸</span>
@@ -16,7 +32,7 @@ const SideBar: FC<SideBarProps> = () => {
 					<div className={style.row}>
 						<input type='text' placeholder='0' />
 						-
-						<input type='text' placeholder='10000' />
+						<input type='text' placeholder={maxPrice(Products)} />
 					</div>
 				</section>
 				<div className={style.title}>Производитель</div>
@@ -32,14 +48,38 @@ const SideBar: FC<SideBarProps> = () => {
 				</section>
 				<section className={style.buttons}>
 					<button className={style.show}>Показать</button>
-					<button className={style.trash}>
-						<img src='/src/UI kit/images/trash.png' alt='' />
-					</button>
+					<TrashButton />
 				</section>
 				<div className={style.column}>
-					<div className={style.sortCard}>Уход за телом</div>
-					<div className={style.sortCard}>Уход за руками</div>
+					{isMobile ? null : (
+						<>
+							<div className={style.sortCard}>Уход за телом</div>
+							<div className={style.sortCard}>Уход за руками</div>
+						</>
+					)}
 				</div>
+				{!isMobile ? (
+					<>
+						<div className={style.title}>Бренды</div>
+						<section className={style.brands}>
+							<div>
+								<img src='/src/UI kit/images/air-wick.png' alt='' />
+							</div>
+							<div>
+								<img src='/src/UI kit/images/master.png' alt='' />
+							</div>
+							<div>
+								<img src='/src/UI kit/images/sib.png' alt='' />
+							</div>
+							<div>
+								<img src='/src/UI kit/images/cotton.png' alt='' />
+							</div>
+							<div>
+								<img src='/src/UI kit/images/camay.png' alt='' />
+							</div>
+						</section>
+					</>
+				) : null}
 			</div>
 		</div>
 	);
