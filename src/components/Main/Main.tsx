@@ -1,11 +1,13 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { useAction } from '../../hooks/useAction';
+import { useTypedSelector } from '../../hooks/useTappedSelector';
 import ListCard from '../ListCard/ListCard';
 import SideBar from '../SideBar/SideBar';
 import style from './Main.module.scss';
 
-type Props = {};
+type MainProps = {};
 
-const Main: FC = (props: Props) => {
+const Main: FC<MainProps> = () => {
 	function menuHandler() {
 		const menu = document.querySelector(`.${style.toggle}`);
 		const sidebar = document.querySelector(`.${style.mobileSidebar}`);
@@ -13,6 +15,37 @@ const Main: FC = (props: Props) => {
 		menu?.classList.toggle(style.open);
 		sidebar?.classList.toggle(style.openMobileSidebar);
 	}
+
+	const products = useTypedSelector(state => state.sort.products);
+	const { sortProducts, filterByCare, resetFilters } = useAction();
+
+	const handleChange = (event: any) => {
+		const [sortType, sortDirection] = event.target.value.split('-');
+		sortProducts({ sortType, sortDirection });
+	};
+
+	const [isActive, setIsActive] = useState<boolean>(false);
+	const careFilters = useTypedSelector(state => state.sort.filterCareType);
+	const handleClick = (event: any) => {
+		setIsActive(false);
+		const target = event.target;
+		const filterValue = target.dataset.value;
+
+		if (isActive && target.style.border) {
+			resetFilters();
+			setIsActive(false);
+			target.style.border = 'none';
+		} else {
+			filterByCare(filterValue);
+			target.style.border = '3px solid #f3a50d';
+			setIsActive(true);
+		}
+
+		console.log(filterValue);
+		console.log(isActive);
+		console.log(careFilters);
+	};
+	console.log(isActive);
 
 	return (
 		<div className={style.main}>
@@ -35,28 +68,28 @@ const Main: FC = (props: Props) => {
 					</div>
 				</div>
 				<div className={style.rowMobile}>
-					<div className={style.sortCard}>
-						Уход <div>за телом</div>
+					<div className={style.sortCard} data-value='body' onClick={handleClick}>
+						Уход <br /> за телом
 					</div>
-					<div className={style.sortCard}>
-						Уход <div>за руками</div>
+					<div className={style.sortCard} data-value='hand' onClick={handleClick}>
+						Уход <br /> за руками
 					</div>
 				</div>
 				<div className={style.sortTitle}>
 					Сортировка:
-					<select name='sort' id='' className={style.sort}>
-						<option value='1'>Название &uarr;</option>
-						<option value='2'>Название &darr;</option>
-						<option value='3'>Цена &uarr;</option>
-						<option value='4'>Цена &darr;</option>
+					<select name='sort' className={style.sort} onChange={handleChange}>
+						<option value='title-up'>Название &uarr;</option>
+						<option value='title-down'>Название &darr;</option>
+						<option value='price-up'>Цена &uarr;</option>
+						<option value='price-down'>Цена &darr;</option>
 					</select>
 				</div>
 				<div className={style.row}>
-					<div className={style.sortCard}>
-						Уход <div>за телом</div>
+					<div className={style.sortCard} data-value='body' onClick={handleClick}>
+						Уход <br /> за телом
 					</div>
-					<div className={style.sortCard}>
-						Уход <div>за руками</div>
+					<div className={style.sortCard} data-value='hand' onClick={handleClick}>
+						Уход <br /> за руками
 					</div>
 				</div>
 				<div className={style.grid}>
@@ -64,7 +97,7 @@ const Main: FC = (props: Props) => {
 						<SideBar isMobile={false} />
 					</aside>
 					<main className={style.cards}>
-						<ListCard />
+						<ListCard products={products} />
 					</main>
 				</div>
 			</div>

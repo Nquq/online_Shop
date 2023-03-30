@@ -128,6 +128,7 @@
 	display: flex;
 	gap: 24px;
 	align-items: center;
+	position: relative;
 }
 
 .cartTitles {
@@ -138,7 +139,12 @@
 	font-weight: 300;
 	font-size: 12px;
 	line-height: 150%;
+	cursor: pointer;
 	color: $color2;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .cartPrice {
@@ -147,4 +153,20 @@
 	line-height: 150%;
 	width: 110px;
 	color: $color1;
+}
+
+.count {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 21px;
+	text-align: center;
+	color: #ffffff;
+	background: $color6;
+	border: 3px solid #ffffff;
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	left: 30px;
+	top: -5px;
 }

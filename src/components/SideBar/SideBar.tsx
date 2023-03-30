@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Products } from '../../data/Product';
+import { useAction } from '../../hooks/useAction';
 import { IProductItemType } from '../../types/ProductType';
 import ListCheckBox from '../../UI kit/ListCheckBox/ListCheckBox';
 import Search from '../../UI kit/Search/Search';
@@ -21,6 +22,25 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 		return `${max}`;
 	};
 
+	const { filterByCare, resetFilters } = useAction();
+
+	const [isActive, setIsActive] = useState<boolean>(false);
+	const handleClick = (event: any) => {
+		const target = event.target;
+		const filterValue = target.dataset.value;
+
+		if (isActive) {
+			resetFilters();
+			setIsActive(false);
+		} else {
+			filterByCare(filterValue);
+			setIsActive(true);
+		}
+
+		console.log(filterValue);
+		console.log(isActive);
+	};
+
 	return (
 		<div className={style.sidebar}>
 			<div className={mobileContainer}>
@@ -38,14 +58,9 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 				<div className={style.title}>Производитель</div>
 				<section className={style.producer}>
 					<Search />
-					<ListCheckBox isBrand={false} />
+					<ListCheckBox />
 				</section>
 				<div className={style.line}></div>
-				<div className={style.title}>Бренд</div>
-				<section className={style.producer}>
-					<Search />
-					<ListCheckBox isBrand={true} />
-				</section>
 				<section className={style.buttons}>
 					<button className={style.show}>Показать</button>
 					<TrashButton />
@@ -53,8 +68,12 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 				<div className={style.column}>
 					{isMobile ? null : (
 						<>
-							<div className={style.sortCard}>Уход за телом</div>
-							<div className={style.sortCard}>Уход за руками</div>
+							<div className={style.sortCard} data-value='body' onClick={handleClick}>
+								Уход за телом
+							</div>
+							<div className={style.sortCard} data-value='hand' onClick={handleClick}>
+								Уход за руками
+							</div>
 						</>
 					)}
 				</div>

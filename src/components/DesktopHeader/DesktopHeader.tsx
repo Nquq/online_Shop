@@ -12,7 +12,7 @@ type Props = {};
 
 const Header: FC = (props: Props) => {
 	const { cart } = useTypedSelector(state => state);
-	console.log(cart);
+
 	return (
 		<header className={style.header}>
 			<div className={style.container}>
@@ -56,6 +56,11 @@ const Header: FC = (props: Props) => {
 					<PriceListButton />
 					<div className={style.line} style={{ margin: '0 25px 0 25px' }}></div>
 					<div className={style.cart}>
+						{cart.length ? (
+							<div className={style.count}>
+								<span>{cart.length}</span>
+							</div>
+						) : null}
 						<div>
 							<img src='/src/UI kit/images/cart.png' alt='' />
 						</div>

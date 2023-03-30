@@ -1,9 +1,11 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
+import { sortActions } from '../redux/slices/sortSlice';
 import { cartActions } from './../redux/slices/cartSLice';
 
 const allActions = {
 	...cartActions,
+	...sortActions,
 };
 
 export const useAction = () => {

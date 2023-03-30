@@ -46,12 +46,20 @@
 	line-height: 130%;
 	color: $color1;
 	max-height: 65px;
+	cursor: pointer;
 
 	& > span {
 		font-weight: 700;
 		font-size: 16px;
 		line-height: 130%;
-		color: $color1;
+	}
+
+	& > span:hover {
+		color: $color6;
+	}
+
+	&:hover {
+		color: $color6;
 	}
 }
 

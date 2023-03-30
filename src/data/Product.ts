@@ -10,7 +10,7 @@ const aos_1: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 48.76,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 const aos_2: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
@@ -22,7 +22,7 @@ const aos_2: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 49.76,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 const aos_3: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
@@ -34,7 +34,7 @@ const aos_3: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 46.76,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 const aos_4: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
@@ -46,7 +46,7 @@ const aos_4: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 48.06,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 const aos_5: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
@@ -58,7 +58,7 @@ const aos_5: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 58.76,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 const aos_6: IProductItemType = {
 	url: '/src/UI kit/images/aos.png',
@@ -70,7 +70,7 @@ const aos_6: IProductItemType = {
 	brand: 'AOS',
 	description: 'Средство для мытья посуды Crystal',
 	price: 42.76,
-	careTypes: ['hand', 'face'],
+	careTypes: ['hand'],
 };
 
 const ariel_1: IProductItemType = {
@@ -83,7 +83,7 @@ const ariel_1: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 44.76,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const ariel_2: IProductItemType = {
@@ -96,7 +96,7 @@ const ariel_2: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 48.16,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const ariel_3: IProductItemType = {
@@ -109,7 +109,7 @@ const ariel_3: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 68.76,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const ariel_4: IProductItemType = {
@@ -122,7 +122,7 @@ const ariel_4: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 128.76,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const ariel_5: IProductItemType = {
@@ -135,7 +135,7 @@ const ariel_5: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 448.76,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const ariel_6: IProductItemType = {
@@ -148,7 +148,7 @@ const ariel_6: IProductItemType = {
 	brand: 'ARIEL',
 	description: 'Автомат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
 	price: 489.76,
-	careTypes: ['body', 'face'],
+	careTypes: ['body'],
 };
 
 const bimax_1: IProductItemType = {

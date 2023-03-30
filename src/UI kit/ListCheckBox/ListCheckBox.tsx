@@ -3,15 +3,13 @@ import { Products } from '../../data/Product';
 import { IProductItemType } from '../../types/ProductType';
 import CheckBox from '../CheckBox/CheckBox';
 
-type ListCheckBoxProps = {
-	isBrand: boolean;
-};
+type ListCheckBoxProps = {};
 
-const ListCheckBox: FC<ListCheckBoxProps> = ({ isBrand }) => {
+const ListCheckBox: FC<ListCheckBoxProps> = () => {
 	const collectProducers = (products: IProductItemType[]) => {
 		const uniq = {} as { [key: string]: number };
 		products.map((product: IProductItemType) => {
-			const currentItem: string = product[isBrand ? 'brand' : 'producer'];
+			const currentItem: string = product['producer'];
 			uniq[currentItem] = uniq[currentItem] ? uniq[currentItem] + 1 : 1;
 		});
 		return uniq;
