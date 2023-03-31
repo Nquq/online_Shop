@@ -1,0 +1,265 @@
+@import '../../style/variables';
+
+.cardFullPage {
+	font-family: 'Inter', sans-serif;
+	padding: 55px 0;
+	@media (max-width: 768px) {
+		padding: 105px 0;
+	}
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	position: relative;
+	@media (max-width: 768px) {
+		max-width: 90%;
+	}
+}
+
+.line {
+	height: 16px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}
+
+.breadCrumbs {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	height: 17px;
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.mainMenu {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 17px;
+	color: $color2;
+}
+
+.category {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 120%;
+	color: $color2;
+	opacity: 0.5;
+}
+
+.row {
+	margin: 50px 0;
+	display: flex;
+}
+
+.img {
+	width: 50%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.info {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 150%;
+	color: $color1;
+	cursor: pointer;
+
+	& > span {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 150%;
+	}
+}
+
+.size {
+	margin-bottom: 2px;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	& > img {
+		margin-right: 8px;
+	}
+}
+
+.increment {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+
+	& > button {
+		background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+		border-radius: 1000px;
+		border: none;
+		padding: 4px 14px;
+		font-weight: 300;
+		font-size: 12px;
+		text-align: center;
+		color: $color2;
+		cursor: pointer;
+	}
+}
+
+.cart {
+	background: $color6;
+	border-radius: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 19px;
+	gap: 5px;
+	border: none;
+	outline: none;
+	font-weight: 700;
+	font-size: 10px;
+	line-height: 12px;
+	letter-spacing: 0.15em;
+	color: white;
+	width: 184px;
+	height: 60px;
+	font-family: 'Inter', sans-serif;
+	cursor: pointer;
+}
+
+.rowButtons {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.price {
+	font-weight: 800;
+	font-size: 30px;
+	line-height: 130%;
+	color: $color1;
+}
+
+.share {
+	background: #ffffff;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 77px;
+	height: 77px;
+}
+
+.rowShare {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.sale {
+	width: 316px;
+	height: 77px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+	color: $color2;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	& > div {
+		margin: 0 30px;
+	}
+	& > div > span {
+		font-weight: 600;
+	}
+}
+
+.priceList {
+	height: 77px;
+	width: 186px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	color: #3f4e65;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+	border-radius: 10px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 20px 0;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 150%;
+	color: $color2;
+}
+
+.primary {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 150%;
+	color: $color1;
+}
+
+.description {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: $color1;
+	display: flex;
+	gap: 10px;
+}
+
+.toggle {
+	transform: rotate(90deg);
+	cursor: pointer;
+	margin-top: 2px;
+	transition: all 0.3s ease;
+}
+
+.openToggleDesc {
+	transform: rotate(270deg);
+	cursor: pointer;
+	margin-top: 2px;
+	margin-right: 2px;
+	transition: all 0.3s ease;
+}
+
+.openToggleStats {
+	transform: rotate(270deg);
+	cursor: pointer;
+	margin-top: 2px;
+	margin-right: 2px;
+	transition: all 0.3s ease;
+}
+
+.openDescription {
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 150%;
+	color: $color2;
+}
+
+.lineX {
+	width: 270px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}

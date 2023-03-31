@@ -1,0 +1,141 @@
+@import '../../style/variables';
+
+.cartItem {
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	position: relative;
+	@media (max-width: 768px) {
+		max-width: 100%;
+	}
+}
+
+.row {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 281px;
+	margin-right: 20px;
+
+	@media (max-width: 768px) {
+		margin: 0;
+		width: 290px;
+	}
+}
+
+.size {
+	margin-bottom: 2px;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 130%;
+
+	color: $color2;
+	& > img {
+		margin-right: 8px;
+	}
+
+	@media (max-width: 768px) {
+		width: 290px;
+	}
+}
+
+.title {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 36px;
+	width: 480px;
+	color: $color1;
+
+	@media (max-width: 768px) {
+		width: 290px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+.column {
+	margin-right: auto;
+}
+
+.line {
+	height: 40px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}
+
+.lineMobile {
+	height: 40px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.rowButtons {
+	display: flex;
+	gap: 44px;
+	align-items: center;
+	@media (max-width: 768px) {
+		gap: 15px;
+	}
+}
+
+.increment {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+
+	& > button {
+		background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+		border-radius: 1000px;
+		border: none;
+		padding: 4px 14px;
+		font-weight: 300;
+		font-size: 12px;
+		text-align: center;
+		color: $color2;
+		cursor: pointer;
+	}
+}
+
+.price {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 130%;
+	color: $color1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: 768px) {
+		font-size: 13px;
+		width: 60px;
+	}
+}
+
+.primaryLine {
+	width: 100%;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+	margin: 50px 0;
+	@media (max-width: 768px) {
+		margin: 20px 0;
+	}
+}

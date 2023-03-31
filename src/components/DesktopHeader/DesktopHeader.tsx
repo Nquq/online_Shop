@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTappedSelector';
 import Email from '../../UI kit/Email/Email';
 import Helper from '../../UI kit/Helper/Helper';
@@ -41,7 +42,9 @@ const Header: FC = (props: Props) => {
 			<div className={style.primaryLine}></div>
 			<div className={style.container}>
 				<div className={style.secondRow}>
-					<Logo isWhite={false} />
+					<Link to={'/'} style={{ textDecoration: 'none' }}>
+						<Logo isWhite={false} />
+					</Link>
 					<button className={style.button}>
 						<div>Каталог</div>
 						<img src='/src/UI kit/images/catalog-logo.png' alt='' />
@@ -56,21 +59,27 @@ const Header: FC = (props: Props) => {
 					<PriceListButton />
 					<div className={style.line} style={{ margin: '0 25px 0 25px' }}></div>
 					<div className={style.cart}>
-						{cart.length ? (
+						{cart.productsInCart.length ? (
 							<div className={style.count}>
-								<span>{cart.length}</span>
+								<span>
+									{cart.productsInCart.reduce((prev, current) => {
+										return prev + current.count;
+									}, 0)}
+								</span>
 							</div>
 						) : null}
 						<div>
 							<img src='/src/UI kit/images/cart.png' alt='' />
 						</div>
 						<div className={style.cartTitles}>
-							<div className={style.cartName}>Корзина</div>
+							<Link to={'/cart'} className={style.cartName}>
+								<div>Корзина</div>
+							</Link>
 							<div className={style.cartPrice}>
 								<>
-									{cart
+									{cart.productsInCart
 										.reduce((prev, current) => {
-											return prev + current.price;
+											return prev + current.product.price * current.count;
 										}, 0)
 										.toFixed(2)}{' '}
 									₸

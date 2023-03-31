@@ -1,0 +1,87 @@
+@import '../../style/variables';
+
+.modal {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.message {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 735px;
+	height: 424px;
+	border-radius: 8px;
+	gap: 20px;
+	z-index: 5;
+	position: relative;
+	@media (max-width: 768px) {
+		width: 290px;
+		height: 288px;
+	}
+}
+
+.image {
+	background-color: $color5;
+	border-radius: 79px;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 120%;
+	text-align: center;
+	text-transform: uppercase;
+	color: $color1;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+.subtitle {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: center;
+	color: $color2;
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
+}
+
+.background {
+	z-index: 4;
+	top: 0;
+	position: absolute;
+	background-color: $color2;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0.5;
+}
+
+.close {
+	color: $color5;
+	cursor: pointer;
+	position: absolute;
+	top: 36px;
+	right: 36px;
+
+	@media (max-width: 768px) {
+		top: 10px;
+		right: 10px;
+	}
+}

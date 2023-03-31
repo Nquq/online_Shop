@@ -1,9 +1,15 @@
+import { FC } from 'react';
+import { useAction } from '../../hooks/useAction';
 import style from './TrashButton.module.scss';
-type Props = {};
+type TrashButtonProps = {
+	code?: number;
+};
 
-const TrashButton = (props: Props) => {
+const TrashButton: FC<TrashButtonProps> = ({ code }) => {
+	const { removeItem } = useAction();
+
 	return (
-		<button className={style.trash}>
+		<button className={style.trash} onClick={() => removeItem(code)}>
 			<img src='/src/UI kit/images/trash.png' alt='' />
 		</button>
 	);

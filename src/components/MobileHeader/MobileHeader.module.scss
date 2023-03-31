@@ -8,6 +8,26 @@
 	z-index: 5;
 }
 
+.count {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	width: 17px;
+	height: 17px;
+	border-radius: 9999px;
+	font-weight: 700;
+	font-size: 10px;
+	line-height: 16px;
+	text-align: center;
+	color: #ffffff;
+	background: $color6;
+	border: 3px solid #ffffff;
+}
+
+.cart {
+	position: relative;
+}
+
 .container {
 	max-width: 290px;
 	margin: auto;

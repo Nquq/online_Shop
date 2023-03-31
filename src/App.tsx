@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import CardFullPage from './components/CardFullPage/CardFullPage';
+import Cart from './components/Cart/Cart';
 import DesktopFooter from './components/DesktopFooter/DesktopFooter';
 import DesktopHeader from './components/DesktopHeader/DesktopHeader';
 import Main from './components/Main/Main';
@@ -21,6 +23,8 @@ function App() {
 				{windowWidth <= 768 ? <MobileHeader /> : <DesktopHeader />}
 				<Routes>
 					<Route path='/' element={<Main />} />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='catalog/:code' element={<CardFullPage />} />
 				</Routes>
 				{windowWidth <= 768 ? <MobileFooter /> : <DesktopFooter />}
 			</Router>

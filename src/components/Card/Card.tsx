@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTappedSelector';
 import { IProductItemType } from '../../types/ProductType';
@@ -12,7 +13,7 @@ const Card: FC<CardProps> = ({ product }) => {
 
 	const { addItem } = useAction();
 	const { cart } = useTypedSelector(state => state);
-	const isExistsInCart = cart.some(p => p.code === product.code);
+	const isExistsInCart = cart.productsInCart.some(p => p.product.code === product.code);
 
 	return (
 		<div className={style.card}>
@@ -26,9 +27,11 @@ const Card: FC<CardProps> = ({ product }) => {
 							<img src={sizeType} alt='' />
 							{product.typeSize === 'volume' ? `${product.size} мл` : `${product.size} г`}
 						</div>
-						<div className={style.title}>
-							<span>{product.title}</span> {product.description}
-						</div>
+						<Link to={`/catalog/${product.code}`} style={{ textDecoration: 'none' }}>
+							<div className={style.title}>
+								<span>{product.title}</span> {product.description}
+							</div>
+						</Link>
 						<div className={style.column}>
 							<div>
 								Штрихкод: <span className={style.primary}>{product.code}</span>
@@ -43,7 +46,7 @@ const Card: FC<CardProps> = ({ product }) => {
 					</div>
 					<div className={style.cartArea}>
 						<div className={style.price}>{product.price} ₸</div>
-						<button className={style.cart} onClick={() => !isExistsInCart && addItem(product)}>
+						<button className={style.cart} onClick={() => !isExistsInCart && addItem({ product, count: 1 })}>
 							{isExistsInCart ? (
 								'УЖЕ В КОРЗИНЕ'
 							) : (

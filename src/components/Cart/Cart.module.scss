@@ -1,0 +1,120 @@
+@import '../../style/variables';
+.cart {
+	font-family: 'Inter', sans-serif;
+	padding: 55px 0;
+	@media (max-width: 768px) {
+		padding: 105px 0;
+	}
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	position: relative;
+	@media (max-width: 768px) {
+		max-width: 90%;
+	}
+}
+
+.line {
+	height: 16px;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+}
+
+.breadCrumbs {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	height: 17px;
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.mainMenu {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 17px;
+	color: $color2;
+}
+
+.category {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 120%;
+	color: $color2;
+	opacity: 0.5;
+}
+
+.header {
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 48px;
+	text-transform: uppercase;
+	color: $color1;
+	padding: 50px 0 25px 0;
+	@media (max-width: 768px) {
+		font-size: 20px;
+		line-height: 120%;
+		text-transform: uppercase;
+		color: $color1;
+		padding: 15px 0;
+	}
+}
+
+.primaryLine {
+	width: 100%;
+	opacity: 0.05;
+	border: 1px dashed #000000;
+	margin: 50px 0;
+}
+
+.order {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& > button {
+		background: $color6;
+		border-radius: 79px;
+		padding: 10px 19px;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		color: #ffffff;
+		border: none;
+		cursor: pointer;
+		width: 200px;
+		height: 60px;
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column-reverse;
+		gap: 25px;
+		justify-content: start;
+		margin-top: 10px;
+	}
+}
+
+.price {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 130%;
+	color: $color1;
+}
+
+.empty {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 130%;
+	color: $color1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 0;
+
+	@media (max-width: 768px) {
+		font-size: 18px;
+	}
+}

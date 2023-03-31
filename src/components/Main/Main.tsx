@@ -25,33 +25,28 @@ const Main: FC<MainProps> = () => {
 	};
 
 	const [isActive, setIsActive] = useState<boolean>(false);
-	const careFilters = useTypedSelector(state => state.sort.filterCareType);
+	const careFilters = useTypedSelector(state => state.sort.filtersCareType);
+
 	const handleClick = (event: any) => {
-		setIsActive(false);
 		const target = event.target;
 		const filterValue = target.dataset.value;
 
-		if (isActive && target.style.border) {
-			resetFilters();
+		if (isActive) {
 			setIsActive(false);
-			target.style.border = 'none';
-		} else {
-			filterByCare(filterValue);
-			target.style.border = '3px solid #f3a50d';
-			setIsActive(true);
+			resetFilters();
+			target.style.border = '';
+			return;
 		}
-
-		console.log(filterValue);
-		console.log(isActive);
-		console.log(careFilters);
+		filterByCare(filterValue);
+		setIsActive(true);
+		target.style.border = '3px solid #f3a50d';
 	};
-	console.log(isActive);
 
 	return (
 		<div className={style.main}>
 			<div className={style.container}>
 				<div className={style.breadCrumbs}>
-					<div className={style.main}>Главная</div>
+					<div className={style.mainMenu}>Главная</div>
 					<div className={style.line}></div>
 					<div className={style.category}>Косметика и гигиена</div>
 				</div>
@@ -69,10 +64,10 @@ const Main: FC<MainProps> = () => {
 				</div>
 				<div className={style.rowMobile}>
 					<div className={style.sortCard} data-value='body' onClick={handleClick}>
-						Уход <br /> за телом
+						Уход за телом
 					</div>
 					<div className={style.sortCard} data-value='hand' onClick={handleClick}>
-						Уход <br /> за руками
+						Уход за руками
 					</div>
 				</div>
 				<div className={style.sortTitle}>

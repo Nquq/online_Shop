@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { useTypedSelector } from '../../hooks/useTappedSelector';
 import Email from '../../UI kit/Email/Email';
 import Logo from '../../UI kit/Logo/Logo';
 import PriceListButton from '../../UI kit/PriceListButton/PriceListButton';
@@ -17,6 +19,8 @@ const MobileHeader: FC = (props: Props) => {
 		background.classList.toggle(style.grayBackgroundOpen);
 	}
 
+	const cart = useTypedSelector(state => state.cart);
+
 	return (
 		<div className={style.header}>
 			<div className={style.container}>
@@ -24,10 +28,19 @@ const MobileHeader: FC = (props: Props) => {
 					<div className={style.burger} onClick={handleBurgerClick}>
 						<span></span>
 					</div>
-					<Logo isWhite={false} isMobile={true} />
-					<div className={style.cart}>
-						<img src='/src/UI kit/images/mobile-cart.png' alt='' />
-					</div>
+					<Link to={'/'} style={{ textDecoration: 'none' }}>
+						<Logo isWhite={false} isMobile={true} />
+					</Link>
+					<Link to={'/cart'}>
+						<div className={style.cart}>
+							<img src='/src/UI kit/images/mobile-cart.png' alt='' />
+							<div className={style.count}>
+								{cart.productsInCart.reduce((prev, current) => {
+									return prev + current.count;
+								}, 0)}
+							</div>
+						</div>
+					</Link>
 				</section>
 			</div>
 			<div className={style.primaryLine}></div>
