@@ -17,29 +17,24 @@ const Main: FC<MainProps> = () => {
 	}
 
 	const products = useTypedSelector(state => state.sort.products);
-	const { sortProducts, filterByCare, resetFilters } = useAction();
+	const { sortProducts, filterByCare } = useAction();
 
 	const handleChange = (event: any) => {
 		const [sortType, sortDirection] = event.target.value.split('-');
 		sortProducts({ sortType, sortDirection });
 	};
 
-	const [isActive, setIsActive] = useState<boolean>(false);
-	const careFilters = useTypedSelector(state => state.sort.filtersCareType);
+	const [showHandProducts, setShowHandProducts] = useState<boolean>(false);
+	const [showBodyProducts, setShowBodyProducts] = useState<boolean>(false);
 
-	const handleClick = (event: any) => {
-		const target = event.target;
-		const filterValue = target.dataset.value;
+	const handleBodyProductsClick = (event: any) => {
+		setShowBodyProducts(!showBodyProducts);
+		filterByCare({ showBodyProducts: !showBodyProducts, showHandProducts: showHandProducts });
+	};
 
-		if (isActive) {
-			setIsActive(false);
-			resetFilters();
-			target.style.border = '';
-			return;
-		}
-		filterByCare(filterValue);
-		setIsActive(true);
-		target.style.border = '3px solid #f3a50d';
+	const handleHandProductsClick = (event: any) => {
+		setShowHandProducts(!showHandProducts);
+		filterByCare({ showBodyProducts: showBodyProducts, showHandProducts: !showHandProducts });
 	};
 
 	return (
@@ -58,17 +53,37 @@ const Main: FC<MainProps> = () => {
 							&gt;
 						</span>
 						<div className={style.mobileSidebar}>
-							<SideBar isMobile={true} />
+							<SideBar
+								isMobile={true}
+								handleBodyClick={handleBodyProductsClick}
+								handleHandClick={handleHandProductsClick}
+								showBodyProducts={showBodyProducts}
+								showHandProducts={showHandProducts}
+								setShowBodyProducts={setShowBodyProducts}
+								setShowHandProducts={setShowHandProducts}
+							/>
 						</div>
 					</div>
 				</div>
 				<div className={style.rowMobile}>
-					<div className={style.sortCard} data-value='body' onClick={handleClick}>
-						Уход за телом
-					</div>
-					<div className={style.sortCard} data-value='hand' onClick={handleClick}>
-						Уход за руками
-					</div>
+					{showBodyProducts ? (
+						<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleBodyProductsClick(event)}>
+							Уход за телом
+						</div>
+					) : (
+						<div className={style.sortCard} onClick={() => handleBodyProductsClick(event)}>
+							Уход за телом
+						</div>
+					)}
+					{showHandProducts ? (
+						<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleHandProductsClick(event)}>
+							Уход за руками
+						</div>
+					) : (
+						<div className={style.sortCard} onClick={() => handleHandProductsClick(event)}>
+							Уход за руками
+						</div>
+					)}
 				</div>
 				<div className={style.sortTitle}>
 					Сортировка:
@@ -80,16 +95,36 @@ const Main: FC<MainProps> = () => {
 					</select>
 				</div>
 				<div className={style.row}>
-					<div className={style.sortCard} data-value='body' onClick={handleClick}>
-						Уход <br /> за телом
-					</div>
-					<div className={style.sortCard} data-value='hand' onClick={handleClick}>
-						Уход <br /> за руками
-					</div>
+					{showBodyProducts ? (
+						<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleBodyProductsClick(event)}>
+							Уход <br /> за телом
+						</div>
+					) : (
+						<div className={style.sortCard} onClick={() => handleBodyProductsClick(event)}>
+							Уход <br /> за телом
+						</div>
+					)}
+					{showHandProducts ? (
+						<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleHandProductsClick(event)}>
+							Уход <br /> за руками
+						</div>
+					) : (
+						<div className={style.sortCard} onClick={() => handleHandProductsClick(event)}>
+							Уход <br /> за руками
+						</div>
+					)}
 				</div>
 				<div className={style.grid}>
 					<aside className={style.sidebar}>
-						<SideBar isMobile={false} />
+						<SideBar
+							isMobile={false}
+							handleBodyClick={handleBodyProductsClick}
+							handleHandClick={handleHandProductsClick}
+							showBodyProducts={showBodyProducts}
+							showHandProducts={showHandProducts}
+							setShowBodyProducts={setShowBodyProducts}
+							setShowHandProducts={setShowHandProducts}
+						/>
 					</aside>
 					<main className={style.cards}>
 						<ListCard products={products} />

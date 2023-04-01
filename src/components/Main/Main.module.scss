@@ -182,7 +182,9 @@
 .rowMobile {
 	@media (max-width: 768px) {
 		padding: 15px 0 25px 0;
-		display: block;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
 	}
 	display: none;
 }

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import { Products } from '../../data/Product';
 import { useAction } from '../../hooks/useAction';
+import { useTypedSelector } from '../../hooks/useTappedSelector';
 import { IProductItemType } from '../../types/ProductType';
 import ListCheckBox from '../../UI kit/ListCheckBox/ListCheckBox';
 import Search from '../../UI kit/Search/Search';
@@ -9,10 +9,31 @@ import style from './SideBar.module.scss';
 
 type SideBarProps = {
 	isMobile: boolean;
+	handleBodyClick: (event: any) => void;
+	handleHandClick: (event: any) => void;
+	showHandProducts: boolean;
+	showBodyProducts: boolean;
+	setShowHandProducts: any;
+	setShowBodyProducts: any;
 };
 
-const SideBar: FC<SideBarProps> = ({ isMobile }) => {
+const SideBar: FC<SideBarProps> = ({
+	isMobile,
+	handleBodyClick,
+	handleHandClick,
+	showBodyProducts,
+	showHandProducts,
+	setShowBodyProducts,
+	setShowHandProducts,
+}) => {
 	const mobileContainer = isMobile ? style.mobileContainer : style.container;
+
+	const [minValue, setMinValue] = useState('');
+	const [maxValue, setMaxValue] = useState('');
+
+	const products = useTypedSelector(state => state.sort.products);
+	const { filterByPrice } = useAction();
+
 	const maxPrice = (products: IProductItemType[]) => {
 		let max: number = 0;
 		products.map(product => {
@@ -20,25 +41,6 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 		});
 
 		return `${max}`;
-	};
-
-	const { filterByCare, resetFilters } = useAction();
-
-	const [isActive, setIsActive] = useState<boolean>(false);
-	const handleClick = (event: any) => {
-		const target = event.target;
-		const filterValue = target.dataset.value;
-
-		if (isActive) {
-			resetFilters();
-			setIsActive(false);
-		} else {
-			filterByCare(filterValue);
-			setIsActive(true);
-		}
-
-		console.log(filterValue);
-		console.log(isActive);
 	};
 
 	return (
@@ -50,9 +52,9 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 						Цена <span>₸</span>
 					</div>
 					<div className={style.row}>
-						<input type='text' placeholder='0' />
+						<input type='text' placeholder='0' value={minValue} onChange={event => setMinValue(event.target.value)} />
 						-
-						<input type='text' placeholder={maxPrice(Products)} />
+						<input type='text' placeholder={maxPrice(products)} value={maxValue} onChange={event => setMaxValue(event.target.value)} />
 					</div>
 				</section>
 				<div className={style.title}>Производитель</div>
@@ -62,18 +64,37 @@ const SideBar: FC<SideBarProps> = ({ isMobile }) => {
 				</section>
 				<div className={style.line}></div>
 				<section className={style.buttons}>
-					<button className={style.show}>Показать</button>
-					<TrashButton />
+					<button className={style.show} onClick={() => filterByPrice({ minPrice: !minValue ? 0 : +minValue, maxPrice: +maxValue })}>
+						Показать
+					</button>
+					<TrashButton
+						setMaxValue={setMaxValue}
+						setMinValue={setMinValue}
+						setShowBodyProducts={setShowBodyProducts}
+						setShowHandProducts={setShowHandProducts}
+					/>
 				</section>
 				<div className={style.column}>
 					{isMobile ? null : (
 						<>
-							<div className={style.sortCard} data-value='body' onClick={handleClick}>
-								Уход за телом
-							</div>
-							<div className={style.sortCard} data-value='hand' onClick={handleClick}>
-								Уход за руками
-							</div>
+							{showBodyProducts ? (
+								<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleBodyClick(event)}>
+									Уход за телом
+								</div>
+							) : (
+								<div className={style.sortCard} onClick={() => handleBodyClick(event)}>
+									Уход за телом
+								</div>
+							)}
+							{showHandProducts ? (
+								<div style={{ border: '2px solid #ffc85e' }} className={style.sortCard} onClick={() => handleHandClick(event)}>
+									Уход за руками
+								</div>
+							) : (
+								<div className={style.sortCard} onClick={() => handleHandClick(event)}>
+									Уход за руками
+								</div>
+							)}
 						</>
 					)}
 				</div>
