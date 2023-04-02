@@ -2,8 +2,7 @@ import { FC, useState } from 'react';
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTappedSelector';
 import { IProductItemType } from '../../types/ProductType';
-import ListCheckBox from '../../UI kit/ListCheckBox/ListCheckBox';
-import Search from '../../UI kit/Search/Search';
+import ProducersList from '../../UI kit/Producers/ProducersList';
 import TrashButton from '../../UI kit/TrashButton/TrashButton';
 import style from './SideBar.module.scss';
 
@@ -15,6 +14,8 @@ type SideBarProps = {
 	showBodyProducts: boolean;
 	setShowHandProducts: any;
 	setShowBodyProducts: any;
+	products: IProductItemType[];
+	producers: [producer: string, count: number][];
 };
 
 const SideBar: FC<SideBarProps> = ({
@@ -25,14 +26,36 @@ const SideBar: FC<SideBarProps> = ({
 	showHandProducts,
 	setShowBodyProducts,
 	setShowHandProducts,
+	products,
+	producers,
 }) => {
 	const mobileContainer = isMobile ? style.mobileContainer : style.container;
 
 	const [minValue, setMinValue] = useState('');
 	const [maxValue, setMaxValue] = useState('');
 
-	const products = useTypedSelector(state => state.sort.products);
-	const { filterByPrice } = useAction();
+	const { filterByPrice, filterByProducer } = useAction();
+	const filters = useTypedSelector(state => state.sort.producersFilters);
+
+	const [checked, setChecked] = useState<boolean[]>([]);
+	const { setProducersFilters, deleteProducersFilters } = useAction();
+
+	const handleCheckBoxChange = (event: any, index: number) => {
+		const newCheckBox: boolean[] = [...checked];
+		newCheckBox[index] = event.target.checked;
+		setChecked(newCheckBox);
+	};
+
+	const removeCheckBox = () => {
+		setChecked(checked.map(item => (item = false)));
+	};
+
+	const handleChange = (e: any) => {
+		const ch = e.target.checked;
+		if (ch) {
+			setProducersFilters(e.target.value);
+		} else if (!ch) deleteProducersFilters(e.target.value);
+	};
 
 	const maxPrice = (products: IProductItemType[]) => {
 		let max: number = 0;
@@ -59,12 +82,17 @@ const SideBar: FC<SideBarProps> = ({
 				</section>
 				<div className={style.title}>Производитель</div>
 				<section className={style.producer}>
-					<Search />
-					<ListCheckBox />
+					<ProducersList producers={producers} handleChange={handleChange} handleCheckBoxChange={handleCheckBoxChange} checked={checked} />
 				</section>
 				<div className={style.line}></div>
 				<section className={style.buttons}>
-					<button className={style.show} onClick={() => filterByPrice({ minPrice: !minValue ? 0 : +minValue, maxPrice: +maxValue })}>
+					<button
+						className={style.show}
+						onClick={() => {
+							filterByPrice({ minPrice: !minValue ? 0 : +minValue, maxPrice: +maxValue });
+							filterByProducer(filters);
+						}}
+					>
 						Показать
 					</button>
 					<TrashButton
@@ -72,6 +100,7 @@ const SideBar: FC<SideBarProps> = ({
 						setMinValue={setMinValue}
 						setShowBodyProducts={setShowBodyProducts}
 						setShowHandProducts={setShowHandProducts}
+						removeCheckbox={removeCheckBox}
 					/>
 				</section>
 				<div className={style.column}>

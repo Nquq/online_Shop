@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { Producers } from '../../data/Producers';
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTappedSelector';
 import ListCard from '../ListCard/ListCard';
@@ -17,6 +18,9 @@ const Main: FC<MainProps> = () => {
 	}
 
 	const products = useTypedSelector(state => state.sort.products);
+
+	const producers = Producers;
+
 	const { sortProducts, filterByCare } = useAction();
 
 	const handleChange = (event: any) => {
@@ -61,6 +65,8 @@ const Main: FC<MainProps> = () => {
 								showHandProducts={showHandProducts}
 								setShowBodyProducts={setShowBodyProducts}
 								setShowHandProducts={setShowHandProducts}
+								products={products}
+								producers={producers}
 							/>
 						</div>
 					</div>
@@ -124,6 +130,8 @@ const Main: FC<MainProps> = () => {
 							showHandProducts={showHandProducts}
 							setShowBodyProducts={setShowBodyProducts}
 							setShowHandProducts={setShowHandProducts}
+							products={products}
+							producers={producers}
 						/>
 					</aside>
 					<main className={style.cards}>

@@ -5,12 +5,14 @@ interface ISort {
 	products: IProductItemType[];
 	sortType: string;
 	sortDirection: string;
+	producersFilters: string[];
 }
 
 const initialState: ISort = {
 	products: Products,
 	sortType: 'title',
 	sortDirection: 'up',
+	producersFilters: [],
 };
 
 export const sortSlice = createSlice({
@@ -54,15 +56,28 @@ export const sortSlice = createSlice({
 				state.products = state.products.filter(item => item.price >= minPrice && item.price <= maxPrice);
 			}
 		},
-		filterByProducer: (state, action) => {
-			const { checked, title } = action.payload;
+		setProducersFilters: (state, action) => {
+			if (!state.producersFilters.includes(action.payload)) {
+				state.producersFilters.push(action.payload);
+			} else if (state.producersFilters.includes(action.payload)) {
+				const index = state.producersFilters.findIndex(item => item === action.payload);
 
-			if (checked) {
-				state.products = state.products.filter(item => item.producer === title);
-			} else if (!checked) state.products = Products;
+				state.producersFilters = state.producersFilters.splice(index, 1);
+			}
+		},
+		deleteProducersFilters: (state, action) => {
+			state.producersFilters = state.producersFilters.filter(item => item !== action.payload);
+		},
+		filterByProducer: (state, action) => {
+			if (!action.payload.length) {
+				state.products = Products;
+			} else {
+				state.products = state.products.filter(item => action.payload.includes(item.producer));
+			}
 		},
 		resetFilters: state => {
 			state.products = Products;
+			state.producersFilters = [];
 		},
 	},
 });

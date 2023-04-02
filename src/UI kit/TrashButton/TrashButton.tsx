@@ -7,9 +7,10 @@ type TrashButtonProps = {
 	setMinValue?: any;
 	setShowBodyProducts?: any;
 	setShowHandProducts?: any;
+	removeCheckbox?: any;
 };
 
-const TrashButton: FC<TrashButtonProps> = ({ code, setMaxValue, setMinValue, setShowBodyProducts, setShowHandProducts }) => {
+const TrashButton: FC<TrashButtonProps> = ({ code, setMaxValue, setMinValue, setShowBodyProducts, setShowHandProducts, removeCheckbox }) => {
 	const { removeItem, resetFilters } = useAction();
 
 	return (
@@ -22,6 +23,7 @@ const TrashButton: FC<TrashButtonProps> = ({ code, setMaxValue, setMinValue, set
 				setMinValue('');
 				setShowBodyProducts(false);
 				setShowHandProducts(false);
+				removeCheckbox();
 			}}
 		>
 			<img src='/src/UI kit/images/trash.png' alt='' />
