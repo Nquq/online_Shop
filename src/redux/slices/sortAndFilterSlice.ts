@@ -54,7 +54,11 @@ export const sortSlice = createSlice({
 			if (!minPrice && !maxPrice) {
 				state.products = Products;
 			} else {
-				state.products = state.products.filter(item => item.price >= minPrice && item.price <= maxPrice);
+				const filteredProducts = state.products.filter(item => item.price >= minPrice && item.price <= maxPrice);
+
+				localStorage.setItem('initialProducts', JSON.stringify(filteredProducts));
+
+				state.products = getProductsFromLocaleStorage();
 			}
 		},
 		setProducersFilters: (state, action) => {
