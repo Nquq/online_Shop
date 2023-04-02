@@ -97,6 +97,11 @@ const MobileHeader: FC = (props: Props) => {
 									<li>Доставка и оплата</li>
 									<li>Возврат</li>
 									<li>Контакты</li>
+									<li>
+										<Link to={'/admin'} className={style.admin}>
+											Панель Админа
+										</Link>
+									</li>
 								</ul>
 							</section>
 							<PriceListButton />
