@@ -92,11 +92,11 @@ export const sortSlice = createSlice({
 		},
 
 		changeProduct: (state, action) => {
-			const { code, data } = action.payload;
+			const { barcode, data } = action.payload;
 
 			const currentState = state.products;
 
-			const index = currentState.findIndex(item => item.code === code);
+			const index = currentState.findIndex(item => item.code === barcode);
 			currentState[index] = {
 				url: data.url,
 				title: data.title,

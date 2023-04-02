@@ -25,13 +25,13 @@ const ChangeModal: FC<ChangeModalProps> = ({ setIsOpen, isOpen, products, barcod
 		const producer = event.target[6].value;
 		const brand = event.target[7].value;
 		const description = event.target[8].value;
-		const price = event.target[9].value;
+		const price = +event.target[9].value;
 		const careTypes = event.target[10].value.split(',');
 
 		const data = { url, title, sizeType, size, code, producer, brand, description, price, careTypes };
 
 		if (barcode) {
-			changeProduct({ code, data });
+			changeProduct({ barcode, data });
 			setIsOpen(false);
 		} else {
 			addProduct({ data });
