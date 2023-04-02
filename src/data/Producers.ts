@@ -1,5 +1,5 @@
 import { IProductItemType } from '../types/ProductType';
-import { Products } from './Product';
+import { getProductsFromLocaleStorage } from './../Utils/LocaleStorage';
 
 const collectProducers = (products: IProductItemType[]) => {
 	const uniq = {} as { [key: string]: number };
@@ -10,4 +10,4 @@ const collectProducers = (products: IProductItemType[]) => {
 	return Object.entries(uniq);
 };
 
-export const Producers = collectProducers(Products);
+export const Producers = collectProducers(getProductsFromLocaleStorage());

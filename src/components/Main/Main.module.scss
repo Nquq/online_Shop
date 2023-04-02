@@ -133,13 +133,6 @@
 	}
 }
 
-.cards {
-	display: flex;
-	gap: 21px;
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
 .sidebar {
 	@media (max-width: 768px) {
 		display: none;

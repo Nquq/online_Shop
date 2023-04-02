@@ -2,8 +2,8 @@ import { FC, useState } from 'react';
 import style from './ProducersList.module.scss';
 type ProducersListProps = {
 	producers: [producer: string, count: number][];
-	handleChange: any;
-	handleCheckBoxChange: any;
+	handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	handleCheckBoxChange: (event: React.ChangeEvent<HTMLInputElement>, index: number) => void;
 	checked: boolean[];
 };
 
@@ -32,8 +32,8 @@ const ProducersList: FC<ProducersListProps> = ({ producers, handleChange, handle
 						<div className={style.checkbox} key={index}>
 							<input
 								type='checkbox'
-								checked={checked[index]}
-								onChange={() => {
+								checked={checked[index] || false}
+								onChange={event => {
 									handleCheckBoxChange(event, index);
 									handleChange(event);
 								}}

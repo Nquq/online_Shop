@@ -1,0 +1,37 @@
+@import '../../style/variables';
+
+.adminPage {
+	font-family: 'Inter', sans-serif;
+	padding: 55px 0;
+	@media (max-width: 768px) {
+		padding: 105px 0;
+	}
+}
+
+.container {
+	max-width: 1370px;
+	margin: auto;
+	position: relative;
+	@media (max-width: 768px) {
+		max-width: 90%;
+	}
+}
+
+.cards {
+	display: flex;
+	gap: 21px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.addItem {
+	width: 120px;
+	padding: 10px;
+	border-radius: 20px;
+	color: $color1;
+	text-align: center;
+	cursor: pointer;
+	margin: 0 0 30px 30px;
+	background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+}

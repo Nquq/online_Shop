@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Products } from '../../data/Product';
 import { IProductItemType } from '../../types/ProductType';
+import { getProductsFromLocaleStorage } from './../../Utils/LocaleStorage';
 interface ISort {
 	products: IProductItemType[];
 	sortType: string;
@@ -9,7 +10,7 @@ interface ISort {
 }
 
 const initialState: ISort = {
-	products: Products,
+	products: getProductsFromLocaleStorage(),
 	sortType: 'title',
 	sortDirection: 'up',
 	producersFilters: [],
@@ -76,8 +77,48 @@ export const sortSlice = createSlice({
 			}
 		},
 		resetFilters: state => {
-			state.products = Products;
+			state.products = getProductsFromLocaleStorage();
 			state.producersFilters = [];
+		},
+
+		addProduct: (state, action) => {
+			const { data } = action.payload;
+
+			const currentState = state.products;
+
+			currentState.push(data);
+			localStorage.setItem('initialProducts', JSON.stringify(currentState));
+			state.products = getProductsFromLocaleStorage();
+		},
+
+		changeProduct: (state, action) => {
+			const { code, data } = action.payload;
+
+			const currentState = state.products;
+
+			const index = currentState.findIndex(item => item.code === code);
+			currentState[index] = {
+				url: data.url,
+				title: data.title,
+				typeSize: data.sizeType,
+				size: data.size,
+				code: data.code,
+				producer: data.producer,
+				brand: data.brand,
+				description: data.description,
+				price: data.price,
+				careTypes: data.careTypes,
+			};
+
+			localStorage.setItem('initialProducts', JSON.stringify(currentState));
+
+			state.products = getProductsFromLocaleStorage();
+		},
+		deleteProduct: (state, action) => {
+			const sortedProducts = state.products.filter(item => item.code !== action.payload);
+			localStorage.setItem('initialProducts', JSON.stringify(sortedProducts));
+
+			state.products = getProductsFromLocaleStorage();
 		},
 	},
 });

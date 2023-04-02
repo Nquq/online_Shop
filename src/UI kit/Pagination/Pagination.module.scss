@@ -1,0 +1,42 @@
+@import '../../style/variables';
+
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	& > div {
+		margin: 0 15px;
+	}
+	margin-top: 50px;
+}
+
+.pageButton {
+	width: 35px;
+	height: 35px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	text-align: center;
+	color: $color2;
+
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: inherit;
+}
+
+.clickedPage {
+	width: 35px;
+	height: 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 4px 14px;
+	background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+	border-radius: 1000px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}

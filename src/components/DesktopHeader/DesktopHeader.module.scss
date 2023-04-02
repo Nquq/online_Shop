@@ -171,3 +171,12 @@
 	left: 30px;
 	top: -5px;
 }
+
+.admin {
+	color: $color1;
+	text-decoration: none;
+	&:hover {
+		color: $color6;
+		text-decoration: underline;
+	}
+}

@@ -36,7 +36,9 @@ const Header: FC = (props: Props) => {
 						<div className={style.line}></div>
 						<div>Контакты</div>
 						<div className={style.line}></div>
-						<div>Панель админа</div>
+						<Link to={'/admin'} className={style.admin}>
+							<div>Панель админа</div>
+						</Link>
 					</div>
 				</div>
 			</div>

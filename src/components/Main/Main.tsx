@@ -41,6 +41,16 @@ const Main: FC<MainProps> = () => {
 		filterByCare({ showBodyProducts: showBodyProducts, showHandProducts: !showHandProducts });
 	};
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const [itemsPerPage] = useState(12);
+
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+	const handlePageChange = (pageNumber: number) => {
+		setCurrentPage(pageNumber);
+	};
+
 	return (
 		<div className={style.main}>
 			<div className={style.container}>
@@ -65,7 +75,7 @@ const Main: FC<MainProps> = () => {
 								showHandProducts={showHandProducts}
 								setShowBodyProducts={setShowBodyProducts}
 								setShowHandProducts={setShowHandProducts}
-								products={products}
+								products={currentItems}
 								producers={producers}
 							/>
 						</div>
@@ -130,13 +140,16 @@ const Main: FC<MainProps> = () => {
 							showHandProducts={showHandProducts}
 							setShowBodyProducts={setShowBodyProducts}
 							setShowHandProducts={setShowHandProducts}
-							products={products}
+							products={currentItems}
 							producers={producers}
 						/>
 					</aside>
-					<main className={style.cards}>
-						<ListCard products={products} />
-					</main>
+					<ListCard
+						products={currentItems}
+						currentPage={currentPage}
+						totalPages={Math.ceil(products.length / itemsPerPage)}
+						onPageChange={handlePageChange}
+					/>
 				</div>
 			</div>
 		</div>

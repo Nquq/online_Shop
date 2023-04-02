@@ -34,11 +34,10 @@ const SideBar: FC<SideBarProps> = ({
 	const [minValue, setMinValue] = useState('');
 	const [maxValue, setMaxValue] = useState('');
 
-	const { filterByPrice, filterByProducer } = useAction();
+	const { filterByPrice, filterByProducer, setProducersFilters, deleteProducersFilters } = useAction();
 	const filters = useTypedSelector(state => state.sort.producersFilters);
 
 	const [checked, setChecked] = useState<boolean[]>([]);
-	const { setProducersFilters, deleteProducersFilters } = useAction();
 
 	const handleCheckBoxChange = (event: any, index: number) => {
 		const newCheckBox: boolean[] = [...checked];
@@ -89,8 +88,8 @@ const SideBar: FC<SideBarProps> = ({
 					<button
 						className={style.show}
 						onClick={() => {
-							filterByPrice({ minPrice: !minValue ? 0 : +minValue, maxPrice: +maxValue });
 							filterByProducer(filters);
+							filterByPrice({ minPrice: !minValue ? 0 : +minValue, maxPrice: !maxValue ? +maxPrice(products) : +maxValue });
 						}}
 					>
 						Показать
