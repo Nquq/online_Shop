@@ -26,7 +26,7 @@ const TrashButton: FC<TrashButtonProps> = ({ code, setMaxValue, setMinValue, set
 				removeCheckbox && removeCheckbox();
 			}}
 		>
-			<img src='/src/UI kit/images/trash.png' alt='' />
+			<img src='/images/trash.png' alt='' />
 		</button>
 	);
 };

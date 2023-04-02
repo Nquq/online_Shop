@@ -24,7 +24,7 @@ const ProducersList: FC<ProducersListProps> = ({ producers, handleChange, handle
 						setValue(e.target.value);
 					}}
 				/>
-				<img src='/src/UI kit/images/search-logo.png' alt='' className={style.searchLogo} />
+				<img src='/images/search-logo.png' alt='' className={style.searchLogo} />
 			</div>
 			<div style={{ marginTop: '15px' }}>
 				{filtered.map((item, index: number) => {

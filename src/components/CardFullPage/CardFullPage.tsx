@@ -17,7 +17,7 @@ const CardFullPage: FC = (props: Props) => {
 		return item.code === +id!;
 	});
 
-	const sizeType = product.typeSize === 'volume' ? '/src/UI kit/images/volume.png' : '/src/UI kit/images/weight.png';
+	const sizeType = product.typeSize === 'volume' ? '/images/volume.png' : '/images/weight.png';
 
 	const cart = useTypedSelector(state => state.cart);
 	const { addItem, removeCount, removeItem } = useAction();
@@ -98,14 +98,14 @@ const CardFullPage: FC = (props: Props) => {
 								) : (
 									<>
 										В КОРЗИНУ
-										<img src='/src/UI kit/images/white-cart.png' alt='' />
+										<img src='/images/white-cart.png' alt='' />
 									</>
 								)}
 							</button>
 						</div>
 						<div className={style.rowShare}>
 							<div className={style.share}>
-								<img src='/src/UI kit/images/share.png' alt='' />
+								<img src='/images/share.png' alt='' />
 							</div>
 							<div className={style.sale}>
 								<div>
@@ -113,7 +113,7 @@ const CardFullPage: FC = (props: Props) => {
 								</div>
 							</div>
 							<div className={style.priceList}>
-								Прайс-лист <img src='/src/UI kit/images/bx_bxs-download.png' alt='' />
+								Прайс-лист <img src='/images/bx_bxs-download.png' alt='' />
 							</div>
 						</div>
 						<div className={style.column}>

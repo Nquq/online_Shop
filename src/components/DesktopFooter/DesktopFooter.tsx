@@ -21,7 +21,7 @@ const Footer: FC = (props: Props) => {
 						<div className={style.search}>
 							<input type='text' placeholder='Введите ваш E-mail' className={style.searchInput} />
 							<div className={style.searchLogo}>
-								<img src='/src/UI kit/images/send.png' alt='' />
+								<img src='/images/send.png' alt='' />
 							</div>
 						</div>
 					</section>
@@ -49,8 +49,8 @@ const Footer: FC = (props: Props) => {
 						<PriceListButton />
 						<div className={style.subtitle}>Связь в мессенджерах:</div>
 						<div className={style.icons}>
-							<img src='/src/UI kit/images/whatsup.png' alt='' />
-							<img src='/src/UI kit/images/logos_telegram.png' alt='' />
+							<img src='/images/whatsup.png' alt='' />
+							<img src='/images/logos_telegram.png' alt='' />
 						</div>
 					</section>
 					<section className={style.section}>
@@ -58,8 +58,8 @@ const Footer: FC = (props: Props) => {
 						<Helper isWhite={true} />
 						<Email isWhite={true} />
 						<div className={style.icons}>
-							<img src='/src/UI kit/images/Visa.png' alt='' />
-							<img src='/src/UI kit/images/mastercard.png' alt='' />
+							<img src='/images/Visa.png' alt='' />
+							<img src='/images/mastercard.png' alt='' />
 						</div>
 					</section>
 				</div>

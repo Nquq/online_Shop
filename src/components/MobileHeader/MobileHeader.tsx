@@ -33,7 +33,7 @@ const MobileHeader: FC = (props: Props) => {
 					</Link>
 					<Link to={'/cart'}>
 						<div className={style.cart}>
-							<img src='/src/UI kit/images/mobile-cart.png' alt='' />
+							<img src='/images/mobile-cart.png' alt='' />
 							<div className={style.count}>
 								{cart.productsInCart.reduce((prev, current) => {
 									return prev + current.count;
@@ -47,12 +47,12 @@ const MobileHeader: FC = (props: Props) => {
 			<div className={style.container}>
 				<section className={style.secondRow}>
 					<div className={style.section}>
-						<img src='/src/UI kit/images/dark-catalog.png' alt='' />
+						<img src='/images/dark-catalog.png' alt='' />
 						<div>Каталог</div>
 					</div>
 					<div className={style.line}></div>
 					<div className={style.section}>
-						<img src='/src/UI kit/images/akar-icons_search.png' alt='' />
+						<img src='/images/akar-icons_search.png' alt='' />
 						<div>Поиск</div>
 					</div>
 				</section>
@@ -62,17 +62,17 @@ const MobileHeader: FC = (props: Props) => {
 				<div className={style.container}>
 					<div className={style.column}>
 						<section className={style.row}>
-							<img src='/src/UI kit/images/akar-icons_location.png' alt='' />
+							<img src='/images/akar-icons_location.png' alt='' />
 							<div className={style.address}>
 								г. Кокчетав, ул. Ж. Ташенова 129Б <span>(Рынок Восточный)</span>
 							</div>
 						</section>
 						<section className={style.row}>
-							<img src='/src/UI kit/images/email-logo.png' alt='' />
+							<img src='/images/email-logo.png' alt='' />
 							<Email isWhite={false} />
 						</section>
 						<section className={style.row}>
-							<img src='/src/UI kit/images/phone-logo.png' alt='' />
+							<img src='/images/phone-logo.png' alt='' />
 							<div>
 								<div className={style.sale}>
 									<span>Отдел продаж</span> <div>+7 (777) 490-00-91</div>
@@ -82,7 +82,7 @@ const MobileHeader: FC = (props: Props) => {
 						</section>
 						<section className={style.row}>
 							<div className={style.image}>
-								<img src='/src/UI kit/images/phone-logo-white.png' alt='' />
+								<img src='/images/phone-logo-white.png' alt='' />
 							</div>
 							<div className={style.phone}>Заказать звонок</div>
 						</section>

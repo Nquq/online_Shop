@@ -1,7 +1,7 @@
 import { IProductItemType } from './../types/ProductType';
 
 const aos_1: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -13,7 +13,7 @@ const aos_1: IProductItemType = {
 	careTypes: ['hand'],
 };
 const aos_2: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -25,7 +25,7 @@ const aos_2: IProductItemType = {
 	careTypes: ['hand'],
 };
 const aos_3: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -37,7 +37,7 @@ const aos_3: IProductItemType = {
 	careTypes: ['hand'],
 };
 const aos_4: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -49,7 +49,7 @@ const aos_4: IProductItemType = {
 	careTypes: ['hand'],
 };
 const aos_5: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -61,7 +61,7 @@ const aos_5: IProductItemType = {
 	careTypes: ['hand'],
 };
 const aos_6: IProductItemType = {
-	url: '/src/UI kit/images/aos.png',
+	url: '/images/aos.png',
 	title: 'AOS',
 	typeSize: 'volume',
 	size: 450,
@@ -74,7 +74,7 @@ const aos_6: IProductItemType = {
 };
 
 const ariel_1: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -87,7 +87,7 @@ const ariel_1: IProductItemType = {
 };
 
 const ariel_2: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -100,7 +100,7 @@ const ariel_2: IProductItemType = {
 };
 
 const ariel_3: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -113,7 +113,7 @@ const ariel_3: IProductItemType = {
 };
 
 const ariel_4: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -126,7 +126,7 @@ const ariel_4: IProductItemType = {
 };
 
 const ariel_5: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -139,7 +139,7 @@ const ariel_5: IProductItemType = {
 };
 
 const ariel_6: IProductItemType = {
-	url: '/src/UI kit/images/ariel.png',
+	url: '/images/ariel.png',
 	title: 'ARIEL',
 	typeSize: 'weight',
 	size: '15X2.8',
@@ -152,7 +152,7 @@ const ariel_6: IProductItemType = {
 };
 
 const bimax_1: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',
@@ -165,7 +165,7 @@ const bimax_1: IProductItemType = {
 };
 
 const bimax_2: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',
@@ -178,7 +178,7 @@ const bimax_2: IProductItemType = {
 };
 
 const bimax_3: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',
@@ -191,7 +191,7 @@ const bimax_3: IProductItemType = {
 };
 
 const bimax_4: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',
@@ -204,7 +204,7 @@ const bimax_4: IProductItemType = {
 };
 
 const bimax_5: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',
@@ -217,7 +217,7 @@ const bimax_5: IProductItemType = {
 };
 
 const bimax_6: IProductItemType = {
-	url: '/src/UI kit/images/bimax.png',
+	url: '/images/bimax.png',
 	title: 'BIMAX',
 	typeSize: 'weight',
 	size: '1500',

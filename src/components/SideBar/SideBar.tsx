@@ -131,19 +131,19 @@ const SideBar: FC<SideBarProps> = ({
 						<div className={style.title}>Бренды</div>
 						<section className={style.brands}>
 							<div>
-								<img src='/src/UI kit/images/air-wick.png' alt='' />
+								<img src='/images/air-wick.png' alt='' />
 							</div>
 							<div>
-								<img src='/src/UI kit/images/master.png' alt='' />
+								<img src='/images/master.png' alt='' />
 							</div>
 							<div>
-								<img src='/src/UI kit/images/sib.png' alt='' />
+								<img src='/images/sib.png' alt='' />
 							</div>
 							<div>
-								<img src='/src/UI kit/images/cotton.png' alt='' />
+								<img src='/images/cotton.png' alt='' />
 							</div>
 							<div>
-								<img src='/src/UI kit/images/camay.png' alt='' />
+								<img src='/images/camay.png' alt='' />
 							</div>
 						</section>
 					</>

@@ -11,7 +11,7 @@ type CartItemProps = {
 
 const CartItem: FC<CartItemProps> = ({ product }) => {
 	const cart = useTypedSelector(state => state.cart);
-	const sizeType = product.typeSize === 'volume' ? '/src/UI kit/images/volume.png' : '/src/UI kit/images/weight.png';
+	const sizeType = product.typeSize === 'volume' ? '/volume.png' : '/images/weight.png';
 	const [price, setPrice] = useState(product.price);
 	const { addItem } = useAction();
 	const [count, setCount] = useState<number>(1);

@@ -10,7 +10,7 @@ type AdminCardsProps = {
 };
 
 const AdminCards: FC<AdminCardsProps> = ({ product, deleteProduct, setIsOpen, isOpen, setCode }) => {
-	const sizeType = product.typeSize === 'volume' ? '/src/UI kit/images/volume.png' : '/src/UI kit/images/weight.png';
+	const sizeType = product.typeSize === 'volume' ? '/images/volume.png' : '/images/weight.png';
 
 	return (
 		<div className={style.card}>

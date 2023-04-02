@@ -10,7 +10,7 @@ const Modal: FC<ModalProps> = ({ handleClick }) => {
 			<div className={style.modal}>
 				<div className={style.message}>
 					<div className={style.image}>
-						<img src='/src/UI kit/images/ok.png' alt='' />
+						<img src='/images/ok.png' alt='' />
 					</div>
 					<div className={style.title}>Спасибо за заказ</div>
 					<div className={style.subtitle}>Наш менеджер свяжется с вами в ближайшее время</div>

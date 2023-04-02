@@ -9,7 +9,7 @@ type CardProps = {
 };
 
 const Card: FC<CardProps> = ({ product }) => {
-	const sizeType = product.typeSize === 'volume' ? '/src/UI kit/images/volume.png' : '/src/UI kit/images/weight.png';
+	const sizeType = product.typeSize === 'volume' ? '/images/volume.png' : '/images/weight.png';
 
 	const { addItem } = useAction();
 	const { cart } = useTypedSelector(state => state);
@@ -52,7 +52,7 @@ const Card: FC<CardProps> = ({ product }) => {
 							) : (
 								<>
 									В КОРЗИНУ
-									<img src='/src/UI kit/images/white-cart.png' alt='' />
+									<img src='/images/white-cart.png' alt='' />
 								</>
 							)}
 						</button>

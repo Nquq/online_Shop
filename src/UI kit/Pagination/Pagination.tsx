@@ -12,7 +12,7 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange
 	return (
 		<div className={style.pagination}>
 			<div>
-				<img src='/src/UI kit/images/left.png' alt='' />
+				<img src='/images/left.png' alt='' />
 			</div>
 			{pages.map(page => {
 				return (
@@ -28,7 +28,7 @@ const Pagination: FC<PaginationProps> = ({ currentPage, totalPages, onPageChange
 				);
 			})}
 			<div>
-				<img src='/src/UI kit/images/right.png' alt='' />
+				<img src='/images/right.png' alt='' />
 			</div>
 		</div>
 	);

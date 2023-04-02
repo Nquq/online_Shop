@@ -9,7 +9,7 @@ const PriceListButton: FC<PriceListButtonProps> = ({ isMobile }) => {
 	return (
 		<button className={mobileView}>
 			<div>Прайс-лист</div>
-			<img src='/src/UI kit/images/dowload-logo.png' alt='' />
+			<img src='/images/dowload-logo.png' alt='' />
 		</button>
 	);
 };
